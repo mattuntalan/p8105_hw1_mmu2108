@@ -1,6 +1,6 @@
 ---
 title: "p8105_hw1_mmu2108"
-output: github_document
+output: html_document
 date: "2022-09-15"
 ---
 
@@ -9,13 +9,25 @@ library(tidyverse)
 data("penguins", package = "palmerpenguins")
 ```
 
-# Question 1
-*   The dataset "penguins" has 8 variables detailing penguin species, island found, measurements of the penguin's bill, flipper, and body mass, sex, and year found.
-*   There are `r nrow(penguins)` rows and `r ncol(penguins)` columns.
-*   Mean flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm.
+# Problem 1
+
+-   The dataset "penguins" has 8 variables detailing penguin species, island found, measurements of the penguin's bill, flipper, and body mass, sex, and year found.
+-   There are `r nrow(penguins)` rows and `r ncol(penguins)` columns.
+-   Mean flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm.
 
 ```{r scatterplot}
 ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
 ggsave("q1_plot.pdf")
 ```
 
+# Problem 2
+
+```{r}
+q2 =
+  tibble(
+    rand_samp = rnorm(n = 10),
+    rand_samp_pos = rand_samp > 0,
+    char_vect = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
+    factor_vect = factor(c("cat1", "cat2", "cat3")
+  )
+```
