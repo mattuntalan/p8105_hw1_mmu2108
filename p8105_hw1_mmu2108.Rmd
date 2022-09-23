@@ -28,6 +28,11 @@ q2 =
     rand_samp = rnorm(n = 10),
     rand_samp_pos = rand_samp > 0,
     char_vect = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
-    factor_vect = factor(c("cat1", "cat2", "cat3")
+    factor_vect = factor(c("cat1", "cat2", "cat3", "cat1", "cat3", "cat2", "cat1", "cat2", "cat1", "cat3"))
   )
+  
+  mean_rand_samp = mean(pull(q2, rand_samp))
+  mean_rand_samp_pos = mean(pull(q2, rand_samp_pos))
+  mean_char_vect = mean(pull(q2, char_vect))
+  mean_factor_vect = mean(pull(q2, factor_vect))
 ```

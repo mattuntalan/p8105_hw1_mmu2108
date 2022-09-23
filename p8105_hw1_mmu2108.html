@@ -396,13 +396,22 @@ mass, sex, and year found.</li>
 </div>
 <div id="problem-2" class="section level1">
 <h1>Problem 2</h1>
-<pre class="r"><code>#q2 =
-#  tibble(
- #   rand_samp = rnorm(n = 10),
-  #  logical = x &gt; 0,
-   # char_vect = c(&quot;Length&quot;),
-    #factor_vect = factor(c(&quot;male&quot;, &quot;female&quot;, &quot;male&quot;, &quot;male&quot;))
- # )</code></pre>
+<pre class="r"><code>q2 =
+  tibble(
+    rand_samp = rnorm(n = 10),
+    rand_samp_pos = rand_samp &gt; 0,
+    char_vect = c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, &quot;g&quot;, &quot;h&quot;, &quot;i&quot;, &quot;j&quot;),
+    factor_vect = factor(c(&quot;cat1&quot;, &quot;cat2&quot;, &quot;cat3&quot;, &quot;cat1&quot;, &quot;cat3&quot;, &quot;cat2&quot;, &quot;cat1&quot;, &quot;cat2&quot;, &quot;cat1&quot;, &quot;cat3&quot;))
+  )
+  
+  mean_rand_samp = mean(pull(q2, rand_samp))
+  mean_rand_samp_pos = mean(pull(q2, rand_samp_pos))
+  mean_char_vect = mean(pull(q2, char_vect))</code></pre>
+<pre><code>## Warning in mean.default(pull(q2, char_vect)): argument is not numeric or
+## logical: returning NA</code></pre>
+<pre class="r"><code>  mean_factor_vect = mean(pull(q2, factor_vect))</code></pre>
+<pre><code>## Warning in mean.default(pull(q2, factor_vect)): argument is not numeric or
+## logical: returning NA</code></pre>
 </div>
 
 
