@@ -1,10 +1,10 @@
 ---
 title: "p8105_hw1_mmu2108"
-output: html_document
+output: github_document
 date: "2022-09-15"
 ---
 
-```{r penguindata}
+```{r penguindata, message = FALSE}
 library(tidyverse)
 data("penguins", package = "palmerpenguins")
 ```
@@ -31,17 +31,21 @@ q2 =
     factor_vect = factor(rand_samp, levels = 1:3)
   )
   
-  mean_rand_samp = mean(pull(q2, rand_samp))
-  mean_rand_samp_pos = mean(pull(q2, rand_samp_pos))
-  mean_char_vect = mean(pull(q2, char_vect))
-  mean_factor_vect = mean(pull(q2, factor_vect))
+mean_rand_samp = mean(pull(q2, rand_samp))
+mean_rand_samp_pos = mean(pull(q2, rand_samp_pos))
+mean_char_vect = mean(pull(q2, char_vect))
+mean_factor_vect = mean(pull(q2, factor_vect))
 ```
 
-```{r}
+-   Mean of the random sample is `r mean_rand_samp`.
+-   Mean of the logical sample is `r mean_rand_samp_pos`.
+-   Mean of the random sample is `r mean_char_vect`.
+-   Mean of the random sample is `r mean_factor_vect`.
+
+```{r numeric}
 as.numeric(pull(q2, rand_samp_pos))
 as.numeric(pull(q2, char_vect))
 as.numeric(pull(q2, factor_vect))
 ```
 
-
-
+The mean outputs make sense based on the chunk above because the character and factor vectors return "NA" since they do not contain any numerical values that can be averaged.  The logical vector does return a mean because the values are binarized.
